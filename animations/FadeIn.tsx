@@ -7,6 +7,7 @@ import {
 } from "react-native";
 
 export default function FadeIn (props: any) {
+    
   const fadeAinm = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
@@ -16,6 +17,7 @@ export default function FadeIn (props: any) {
       useNativeDriver: true,
     }).start();
   }, [fadeAinm]);
+
 
   return (
     <View >

@@ -2,6 +2,7 @@ import { View, StyleSheet } from 'react-native'
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import FadeIn from './animations/FadeIn';
 import Header from './animations/HeaderAnimation'
+// import Header from './animations/FlatListHeaderAnimation'
 
 export default function App() {
   return (

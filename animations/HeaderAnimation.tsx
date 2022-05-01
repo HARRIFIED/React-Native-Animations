@@ -1,12 +1,22 @@
 import React, { useEffect, useRef, useState } from "react";
-import { View, Text, ScrollView, Animated, Platform, Image } from "react-native";
+import {
+  View,
+  Text,
+  ScrollView,
+  Animated,
+  Platform,
+  Image,
+  Dimensions
+} from "react-native";
 import { StatusBar } from "expo-status-bar";
 // import Animated from 'react-native-reanimated'
+
+const windowWidth = Dimensions.get("window").width
 
 export default function Header() {
   const [data, setData] = useState([]);
 
-  const HEADER_HEIGHT = Platform.OS === 'ios' ? 100 : 80
+  const HEADER_HEIGHT = Platform.OS === "ios" ? 100 : 80;
   const scrollY = useRef(new Animated.Value(0)).current;
   const diffClampScrollY = Animated.diffClamp(scrollY, 0, HEADER_HEIGHT);
   const HeaderY = diffClampScrollY.interpolate({
@@ -16,17 +26,22 @@ export default function Header() {
   });
 
   const posts = [
-    {id: 1, uri: require('../assets/images/burger.png')},
-    {id: 2, uri: require('../assets/images/man.png')},
-    {id: 3, uri: require('../assets/images/empty_cart.jpeg')},
-    {id: 4, uri: require('../assets/images/softdrinks.png')},
-    {id: 5, uri: require('../assets/images/burger.png')},
-  ]
+    { id: 1, uri: require("../assets/images/burger.png") },
+    { id: 2, uri: require("../assets/images/man.png") },
+    { id: 3, uri: require("../assets/images/empty_cart.jpeg") },
+    { id: 4, uri: require("../assets/images/softdrinks.png") },
+    { id: 5, uri: require("../assets/images/burger.png") },
+    { id: 6, uri: require("../assets/images/softdrinks.png") },
+    { id: 7, uri: require("../assets/images/burger.png") },
+    { id: 8, uri: require("../assets/images/softdrinks.png") },
+    { id: 9, uri: require("../assets/images/burger.png") },
+    { id: 10, uri: require("../assets/images/softdrinks.png") },
+    { id: 11, uri: require("../assets/images/burger.png") },
+  ];
 
-  
   return (
-    <View>  
-      <StatusBar style="light" />
+    <View>
+      <StatusBar style="light" backgroundColor="tomato" />
       <Animated.View
         style={{
           position: "absolute",
@@ -40,7 +55,7 @@ export default function Header() {
           transform: [{ translateY: HeaderY }],
           alignItems: "center",
           justifyContent: "center",
-          paddingTop: 30
+          paddingTop: 30,
         }}
       >
         <Text style={{ fontSize: 20, color: "white" }}>YUHUB</Text>
@@ -74,9 +89,11 @@ export default function Header() {
               justifyContent: "center",
             }}
           >
-            
-              <Image source={e.uri} style={{flex: 1, width: 400, height: 400, borderRadius: 10}}/>
-            
+            <Image
+              source={e.uri}
+              style={{ flex: 1, width: 400, height: 600, borderRadius: 10 }}
+            />
+            <View style={{height: 6, width: windowWidth / 0.8, backgroundColor: 'grey', marginTop: 15}}></View>
           </View>
         ))}
       </Animated.ScrollView>
