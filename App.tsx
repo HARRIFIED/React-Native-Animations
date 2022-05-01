@@ -1,10 +1,12 @@
 import { View, StyleSheet } from 'react-native'
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import FadeIn from './animations/FadeIn';
+import Header from './animations/HeaderAnimation'
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <FadeIn />
+    <View>
+      <Header />
     </View>
   );
 }
