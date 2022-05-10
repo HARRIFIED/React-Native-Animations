@@ -6,12 +6,12 @@ import {
   Animated,
   Platform,
   Image,
-  Dimensions
+  Dimensions,
 } from "react-native";
 import { StatusBar } from "expo-status-bar";
 // import Animated from 'react-native-reanimated'
 
-const windowWidth = Dimensions.get("window").width
+const windowWidth = Dimensions.get("window").width;
 
 export default function Header() {
   const [data, setData] = useState([]);
@@ -58,7 +58,7 @@ export default function Header() {
           paddingTop: 30,
         }}
       >
-        <Text style={{ fontSize: 20, color: "white" }}>YUHUB</Text>
+        <Text style={{ fontSize: 20, color: "white" }}>HEADER</Text>
       </Animated.View>
       <Animated.ScrollView
         onScroll={Animated.event(
@@ -93,7 +93,14 @@ export default function Header() {
               source={e.uri}
               style={{ flex: 1, width: 400, height: 600, borderRadius: 10 }}
             />
-            <View style={{height: 6, width: windowWidth / 0.8, backgroundColor: 'grey', marginTop: 15}}></View>
+            <View
+              style={{
+                height: 6,
+                width: windowWidth / 0.8,
+                backgroundColor: "grey",
+                marginTop: 15,
+              }}
+            ></View>
           </View>
         ))}
       </Animated.ScrollView>
