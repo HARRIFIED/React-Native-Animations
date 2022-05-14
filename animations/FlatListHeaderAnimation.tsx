@@ -14,8 +14,6 @@ import { StatusBar } from "expo-status-bar";
 const windowWidth = Dimensions.get("window").width;
 
 export default function Header2() {
-  const [data, setData] = useState([]);
-
   const HEADER_HEIGHT = Platform.OS === "ios" ? 100 : 80;
   const scrollY = useRef(new Animated.Value(0)).current;
   const diffClampScrollY = Animated.diffClamp(scrollY, 0, HEADER_HEIGHT);
@@ -68,9 +66,7 @@ export default function Header2() {
                 contentOffset: {
                   y: scrollY,
                 },
-                contentInset: {
-                    
-                }
+                contentInset: {},
               },
             },
           ],
@@ -85,7 +81,7 @@ export default function Header2() {
         renderItem={({ item }) => (
           <View
             style={{
-            //   paddingTop: HEADER_HEIGHT,
+              //   paddingTop: HEADER_HEIGHT,
               height: 400,
               margin: 20,
               alignItems: "center",
