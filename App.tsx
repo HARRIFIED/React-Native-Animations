@@ -5,11 +5,13 @@ import Header from './animations/HeaderAnimation'
 import Header2 from './animations/FlatListHeaderAnimation'
 import BottomSheets from './animations/BottomSheet/BottomSheets';
 import FadeIn2 from './animations/FadeIn_Reanimated';
+import BoxGesture from './animations/Gesture&Reanimated'
+
 
 export default function App() {
   return (
     <View>
-      <FadeIn2 />
+      <BoxGesture />
     </View>
   );
 }
