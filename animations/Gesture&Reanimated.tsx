@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Modal } from 'react-native';
 import Animated, {
   useAnimatedGestureHandler,
   useAnimatedStyle,
@@ -62,15 +62,17 @@ export default function App() {
   });
 
   return (
-    <GestureHandlerRootView style={{ flex: 1 }}>
-      <View style={styles.container}>
-        <View style={styles.circle}>
-          <PanGestureHandler onGestureEvent={panGestureEvent}>
-            <Animated.View style={[styles.square, rStyle]} />
-          </PanGestureHandler>
+    <Modal>
+      <GestureHandlerRootView style={{ flex: 1 }}>
+        <View style={styles.container}>
+          <View style={styles.circle}>
+            <PanGestureHandler onGestureEvent={panGestureEvent}>
+              <Animated.View style={[styles.square, rStyle]} />
+            </PanGestureHandler>
+          </View>
         </View>
-      </View>
-    </GestureHandlerRootView>
+      </GestureHandlerRootView>
+    </Modal>
   );
 }
 
@@ -95,6 +97,6 @@ const styles = StyleSheet.create({
     borderRadius: CIRCLE_RADIUS,
     borderWidth: 5,
     borderColor: 'rgba(0, 0, 256, 0.5)',
-    top: 300
+    
   },
 });

@@ -7,7 +7,7 @@ import BottomSheets from './animations/BottomSheet/BottomSheets';
 import FadeIn2 from './animations/FadeIn_Reanimated';
 import BoxGesture from './animations/Gesture&Reanimated'
 
-
+//Add any components from the imports to see animations
 export default function App() {
   return (
     <View>
