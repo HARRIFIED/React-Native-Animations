@@ -10,7 +10,6 @@ export default function BottomSheet() {
   const panResponder = useRef(
     PanResponder.create({
       onMoveShouldSetPanResponder: () => true,
-      onPanResponderTerminationRequest: () => true,
       onPanResponderGrant: () => {
         pan.setOffset({
           x: pan.x._value,

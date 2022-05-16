@@ -10,27 +10,23 @@ import Animated, {
 
 const SIZE = 100.0;
 export default function FadeIn2() {
-
   const ANIMATED_VALUE = useSharedValue(0);
   const scale = useSharedValue(0);
   const border = useSharedValue(50);
-  const rotation = useSharedValue('0deg');
+  const rotation = useSharedValue("0deg");
 
   useEffect(() => {
     ANIMATED_VALUE.value = withRepeat(withSpring(1), -1, true);
-    scale.value = withRepeat(withSpring(2), -1, true)
-    border.value = withRepeat(withSpring(10), -1, true)
-    rotation.value = withRepeat(withSpring('360deg'), -1, true)
+    scale.value = withRepeat(withSpring(2), -1, true);
+    border.value = withRepeat(withSpring(10), -1, true);
+    rotation.value = withRepeat(withSpring("360deg"), -1, true);
   });
 
   const reanimatedStyle = useAnimatedStyle(() => {
     return {
       opacity: ANIMATED_VALUE.value,
       borderRadius: border.value,
-      transform: [
-        { scale: scale.value },
-        {rotate: rotation.value}
-      ],
+      transform: [{ scale: scale.value }, { rotate: rotation.value }],
     };
   }, []);
   return (
