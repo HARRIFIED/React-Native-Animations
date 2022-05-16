@@ -7,12 +7,13 @@ import BottomSheets from './animations/BottomSheet/BottomSheets';
 import FadeIn2 from './animations/FadeIn_Reanimated';
 import BoxGesture from './animations/Gesture&Reanimated'
 import Scroll from './animations/ScrollView&Interpolation/ScrollView&Interpolation';
+import Theme from './animations/Theme_Interpolation';
 
 //Add any components from the imports to see animations
 export default function App() {
   return (
     <View>
-      <Scroll />
+      <Theme />
     </View>
   );
 }
