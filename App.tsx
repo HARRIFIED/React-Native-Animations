@@ -9,12 +9,13 @@ import BoxGesture from './animations/Gesture&Reanimated'
 import Scroll from './animations/ScrollView&Interpolation/ScrollView&Interpolation';
 import Theme from './animations/Theme_Interpolation';
 import Swipe from './animations/SwipeToDelete/SwipeToDelete';
+import WhatsappHeader from './animations/Scrollview-whatsappHeader/WhatsappHeader'
 
 //Add any components from the imports to see animations
 export default function App() {
   return (
     <View>
-      <Swipe />
+      <WhatsappHeader />
     </View>
   );
 }
